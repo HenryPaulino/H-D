@@ -116,6 +116,9 @@ footer span:first-child { color: #fff; font-family: var(--serif); font-size: 15p
 .panel-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 32px; }
 .panel-head .eyebrow { margin-bottom: 12px; }
 .panel-head h3, .countdown-panel h3 { font-size: 36px; letter-spacing: -.03em; }
+.cloud-status { color: var(--muted); font-size: 10px; letter-spacing: .06em; margin: 10px 0 0; text-transform: uppercase; }
+.cloud-status[data-state="success"] { color: #52745d; }
+.cloud-status[data-state="error"] { color: var(--rust); }
 .add-button, .primary-button { background: var(--rust); border: 0; color: #fffaf3; cursor: pointer; font-size: 10px; letter-spacing: .1em; padding: 14px 17px; text-transform: uppercase; transition: background .25s, transform .25s; }
 .add-button:hover, .primary-button:hover { background: #85474e; transform: translateY(-2px); }
 .entry-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
@@ -134,6 +137,12 @@ footer span:first-child { color: #fff; font-family: var(--serif); font-size: 15p
 .entry-content > p:not(.entry-date), .place-row p:last-of-type, .date-row p { color: var(--muted); font-size: 13px; line-height: 1.65; margin: 0; }
 .delete-link { background: none; border: 0; color: var(--rust); cursor: pointer; font-size: 10px; letter-spacing: .08em; margin-top: 18px; padding: 0; text-decoration: underline; text-transform: uppercase; }
 .place-list, .date-list { border-top: 1px solid var(--line); }
+.church-intro { color: var(--muted); font-family: var(--serif); font-size: 17px; line-height: 1.7; margin: -8px 0 30px; max-width: 620px; }
+.church-list { border-top: 1px solid var(--line); }
+.church-row { align-items: start; border-bottom: 1px solid var(--line); display: grid; gap: 25px; grid-template-columns: 55px 1fr auto; padding: 25px 0; }
+.church-row h4 { font-family: var(--serif); font-size: 25px; font-weight: 400; line-height: 1.1; margin: 0 0 10px; }
+.church-row p:last-of-type { color: var(--muted); font-size: 14px; line-height: 1.75; margin: 0; max-width: 680px; white-space: pre-line; }
+.church-row .delete-link { margin-top: 0; }
 .place-row, .date-row { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 25px; grid-template-columns: 55px 1fr auto; padding: 24px 0; }
 .place-number { color: var(--rust); font-family: var(--serif); font-size: 23px; }
 .place-row .delete-link, .date-row .delete-link { margin: 0; }
@@ -141,6 +150,25 @@ footer span:first-child { color: #fff; font-family: var(--serif); font-size: 15p
 .date-actions { align-items: end; display: flex; flex-direction: column; gap: 9px; }
 .countdown-link { background: none; border: 0; color: var(--rust); cursor: pointer; font-size: 10px; letter-spacing: .08em; padding: 0; text-transform: uppercase; }
 .countdown-link:hover { text-decoration: underline; }
+.messages-panel { background: #f8efec; border: 1px solid #ead9d5; padding: clamp(24px, 4vw, 48px); }
+.messages-intro { color: var(--muted); font-family: var(--serif); font-size: 17px; line-height: 1.65; margin: -8px 0 30px; max-width: 560px; }
+.message-categories { display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.message-category { align-items: center; background: var(--cream); border: 1px solid transparent; color: var(--ink); cursor: pointer; display: flex; gap: 10px; min-height: 58px; padding: 12px 14px; text-align: left; transition: border-color .2s, background .2s, transform .2s; }
+.message-category:hover, .message-category:focus-visible { background: #fff; border-color: var(--rust); outline: none; transform: translateY(-2px); }
+.message-category.is-selected { background: #fff; border-color: var(--rust); box-shadow: inset 3px 0 var(--rust); }
+.message-category-emoji { font-size: 22px; line-height: 1; }
+.message-category span:last-child { font-size: 11px; letter-spacing: .04em; line-height: 1.35; }
+.message-result { align-items: center; background: #fff; border-left: 3px solid var(--rust); display: flex; gap: 18px; margin: 30px 0 22px; min-height: 105px; padding: 22px 25px; }
+.message-result { align-items: stretch; display: block; }
+.message-collection-heading { align-items: center; display: flex; gap: 16px; margin-bottom: 22px; }
+.message-collection-heading .eyebrow { margin: 0 0 5px; }
+.message-collection-heading h4 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin: 0; }
+.message-result p { font-family: var(--serif); font-size: 18px; line-height: 1.55; margin: 0; }
+.message-result-heart, .message-result-emoji { color: var(--rust); font-size: 29px; flex: 0 0 auto; }
+.message-list { display: grid; gap: 10px; }
+.message-card { align-items: start; background: var(--cream); display: grid; gap: 15px; grid-template-columns: 28px 1fr; padding: 22px 24px; }
+.message-card-number { color: var(--rust); font-size: 10px; letter-spacing: .1em; padding-top: 4px; }
+.message-random-button { display: block; margin-left: auto; }
 .date-badge { border: 1px solid var(--rust); color: var(--rust); display: grid; padding: 8px 4px; text-align: center; width: 58px; }
 .date-badge strong { font-family: var(--serif); font-size: 25px; font-weight: 400; line-height: 1; }
 .date-badge span { font-size: 9px; letter-spacing: .08em; margin-top: 5px; text-transform: uppercase; }
@@ -179,6 +207,13 @@ footer span:first-child { color: #fff; font-family: var(--serif); font-size: 15p
   .dashboard-heading { align-items: start; display: block; margin-bottom: 45px; }
   .dashboard-intro { margin-top: 28px; }
   .tabs { gap: 23px; }
+  .message-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .message-category { min-height: 54px; padding: 10px; }
+  .message-category-emoji { font-size: 19px; }
+  .message-category span:last-child { font-size: 10px; }
+  .message-result { align-items: start; padding: 18px; }
+  .message-result p { font-size: 18px; }
+  .message-random-button { margin-left: 0; }
   .panel-head { align-items: start; flex-direction: column; gap: 22px; }
   .entry-grid { grid-template-columns: 1fr; }
   .accordion-gallery { margin-left: -28px; width: calc(100% + 56px); }
@@ -187,6 +222,7 @@ footer span:first-child { color: #fff; font-family: var(--serif); font-size: 15p
   .gallery-label { bottom: 17px; font-size: 20px; left: 16px; }
   .entry-card img { height: 270px; }
   .place-row, .date-row { gap: 14px; grid-template-columns: 40px 1fr auto; }
+  .church-row { gap: 14px; grid-template-columns: 40px 1fr auto; }
   .place-row .delete-link, .date-row .delete-link, .countdown-link { font-size: 8px; }
   .entry-form { padding: 23px; }
   .countdown-panel { margin: -25px 0 0; padding: 55px 20px; }
