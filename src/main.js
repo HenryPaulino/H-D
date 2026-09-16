@@ -42,7 +42,7 @@ const readPhoto = (file) => new Promise((resolve) => {
 const renderShell = () => {
   document.querySelector('#app').innerHTML = `
     <header class="site-header">
-      <a class="wordmark" href="#inicio" aria-label="Voltar ao início">H <span>+</span> D</a>
+      <a class="wordmark" href="#inicio" aria-label="Voltar ao início">Entre <span>Nós</span></a>
       <nav aria-label="Navegação principal"><a href="#memorias" data-tab="memories">Memórias</a><a href="#memorias" data-tab="places">Lugares</a><a href="#memorias" data-tab="dates">Datas</a><a href="#memorias" data-tab="countdown">Próximo encontro</a></nav>
       <button class="menu-button" type="button" aria-label="Abrir menu">☰</button>
     </header>
