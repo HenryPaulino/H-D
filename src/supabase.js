@@ -3,7 +3,12 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-export const cloudEnabled = Boolean(supabaseUrl && supabaseAnonKey)
+const isPlaceholderValue = (value = '') => {
+  const normalized = String(value).trim().toLowerCase()
+  return !normalized || normalized.includes('seu-projeto') || normalized.includes('sua-chave') || normalized.includes('placeholder')
+}
+
+export const cloudEnabled = Boolean(supabaseUrl && supabaseAnonKey && !isPlaceholderValue(supabaseUrl) && !isPlaceholderValue(supabaseAnonKey))
 export const supabase = cloudEnabled ? createClient(supabaseUrl, supabaseAnonKey) : null
 
 const memoriesTable = 'memories'
